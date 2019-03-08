@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {color, theme} from "../templates/ui";
+import {color} from "../templates/ui";
 import Logo from "../atoms/icons/Logo";
 import Loader from "../atoms/icons/Loader";
 
