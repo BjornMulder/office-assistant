@@ -22,7 +22,7 @@ class AppController extends Controller
         foreach ($employees as $employee) {
             if (!empty($employee->connections->last())) {
                 if ($employee->connections->last()->action === Connection::ACTION_CONNECTED) {
-                    $employeesPresent[] = $employee;
+                    $employeesPresent[] = $employee->device_owner;
                 }
             }
         }
