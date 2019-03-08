@@ -11,7 +11,7 @@ const StyledEmployee = styled.li`
   line-height: 1rem;
   
   + li {
-    padding-top: 15px;
+    padding-top: 20px;
   }
   
   span {
