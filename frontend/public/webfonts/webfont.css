@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "Campton Webfont";
+    src: url("campton/campton.bold-webfont.woff") format("woff"),
+    url("campton/campton.bold-webfont.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+}
