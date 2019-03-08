@@ -24,7 +24,7 @@ class AppController extends Controller
                 if ($employee->connections->last()->action === Connection::ACTION_CONNECTED) {
                     $employeesPresent[] = [
                         'name' => $employee->device_owner,
-                        'arrived' => $employee->arrived_at,
+                        'arrived' => $employee->connections->last()->triggered_at,
                     ];
                 }
             }
