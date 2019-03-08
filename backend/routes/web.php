@@ -11,4 +11,5 @@
 |
 */
 
-Route::get('/', 'Api\PiController@arriving');
+Route::get('/getpresent', 'Api\AppController@getPresent');
+Route::post('/arriving', 'Api\PiController@arriving');
