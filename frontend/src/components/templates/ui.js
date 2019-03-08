@@ -1,34 +1,12 @@
 export const color = {
   primary: {
-    alt: "#ED2D37",
-    darkest: "",
-    darker: "#EE2D38",
     hover: "#be242d",
-    base: "#ED2D37",
-    light: "",
-    lighter: "",
-    lightest: ""
-  },
-  secondary: {
-    darkest: "",
-    darker: "",
-    hover: "",
-    base: "",
-    light: "",
-    lighter: "",
-    lightest: ""
+    base: "#ee2d38",
   },
   gray: {
-    alt: "#DDDDDD",
-    darkest: "#1F1F1F",
-    darker: "#797979",
     dark: "#CFCFCF",
     base: "#ECECEC",
-    light: "#f7f7f7",
-    lighter: "#F6F6F6",
-    lightest: "#F1F1F1",
-    white: "#FFFFFF",
-    black: ""
+    border: "#f3f3f3"
   },
   body: { base: "#ffffff" },
   base: { base: "#1E1E1E" },
