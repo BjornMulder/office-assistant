@@ -32,7 +32,7 @@ class PiController extends Controller
         $connection->triggered_at = Carbon::now();
         $connection->created_at = Carbon::now();
         $connection->device_id = $device->id;
-        return $connection->save();
+        return response()->json($connection->save());
     }
 
     public function leaving(Request $request)
@@ -44,6 +44,6 @@ class PiController extends Controller
         $connection->triggered_at = Carbon::now();
         $connection->created_at = Carbon::now();
         $connection->device_id = $device->id;
-        return $connection->save();
+        return response()->json($connection->save());
     }
 }
