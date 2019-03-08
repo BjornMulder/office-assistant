@@ -4,7 +4,8 @@ import {color} from "../templates/ui";
 
 const StyledCard = styled.div`
   background-color: ${color.body.base};
-  padding: 20px;
+  padding: 15px;
+  border: 1px solid #f3f3f3;
 `;
 
 const Card = ({children}) => (

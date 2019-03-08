@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import Header from "./components/organisms/Header";
 import LoadingScreen from "./components/pages/LoadingScreen";
+import EmployeeList from "./components/molecules/EmployeeList";
+import Employee from "./components/atoms/Employee";
+import Card from "./components/atoms/Card";
+import Main from "./components/atoms/Main";
+import Container from "./components/atoms/Container";
+import Title from "./components/atoms/Title";
 
 class App extends Component {
   constructor(props) {
@@ -41,13 +47,21 @@ class App extends Component {
       return (
         <>
           <Header />
-          <ul>
-            {items.map(item => (
-              <li key={item.device_owner}>
-                {item.device_owner}
-              </li>
-            ))}
-          </ul>
+          <Container>
+            <Main>
+              <Title>Aanwezige collega's </Title>
+              <Card>
+                <EmployeeList>
+                  {items.map(item => (
+                    <Employee key={item}>
+                      {item.device_owner}
+                      <span>{item.created_at}</span>
+                    </Employee>
+                  ))}
+                </EmployeeList>
+              </Card>
+            </Main>
+          </Container>
         </>
       );
     }
