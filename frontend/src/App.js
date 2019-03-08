@@ -7,6 +7,7 @@ import Card from "./components/atoms/Card";
 import Main from "./components/atoms/Main";
 import Container from "./components/atoms/Container";
 import Title from "./components/atoms/Title";
+import * as moment from "moment";
 
 class App extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    fetch("https://office-assistant.defser.nl/backend/public/getpresent")
+    fetch("https://office-assistant.defser.nl/backend/public/api/getpresent")
       .then(res => res.json())
       .then(
         (result) => {
@@ -54,8 +55,8 @@ class App extends Component {
                 <EmployeeList>
                   {items.map(item => (
                     <Employee key={item}>
-                      {item.device_owner}
-                      <span>{item.created_at}</span>
+                      {item.name}
+                      <span>{moment(item.arrived).fromNow()}</span>
                     </Employee>
                   ))}
                 </EmployeeList>
