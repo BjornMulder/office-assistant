@@ -20,8 +20,10 @@ class AppController extends Controller
         $employees = Device::with('connections')->get();
 
         foreach ($employees as $employee) {
-            if ($employee->connections->last()->action === Connection::ACTION_CONNECTED) {
-                $employeesPresent[] = $employee;
+            if (!empty($employee->connections->last())) {
+                if ($employee->connections->last()->action === Connection::ACTION_CONNECTED) {
+                    $employeesPresent[] = $employee;
+                }
             }
         }
 
