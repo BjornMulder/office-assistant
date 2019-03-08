@@ -34,11 +34,11 @@ class PiController extends Controller
         $connection->created_at = Carbon::now();
         $connection->device_id = $device->id;
 
-        $client = new Client(['base_uri' => '192.168.1.34']);
+/*         $client = new Client(['base_uri' => '192.168.1.34']); */
 
-        $response = $client->request('POST', '/api/users/' . $request->get('mac_address'), [
-            'json' => ['present' => 'true'],
-        ]);
+/*         $response = $client->request('POST', '/api/users/' . $request->get('mac_address'), [ */
+/*             'json' => ['present' => 'true'], */
+/*         ]); */
 
         return response()->json($connection->save());
     }
@@ -53,11 +53,11 @@ class PiController extends Controller
         $connection->created_at = Carbon::now();
         $connection->device_id = $device->id;
 
-        $client = new Client(['base_uri' => '192.168.1.34']);
+        /* $client = new Client(['base_uri' => '192.168.1.34']); */
 
-        $response = $client->request('POST', '/api/users/' . $request->get('mac_address'), [
-            'json' => ['present' => 'false'],
-        ]);
+        /* $response = $client->request('POST', '/api/users/' . $request->get('mac_address'), [ */
+        /*     'json' => ['present' => 'false'], */
+        /* ]); */
 
         return response()->json($connection->save());
     }
