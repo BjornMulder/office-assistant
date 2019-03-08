@@ -11,6 +11,3 @@
 |
 */
 
-Route::get('/getpresent', 'Api\AppController@getPresent');
-Route::post('/arriving', 'Api\PiController@arriving');
-Route::post('/leaving', 'Api\PiController@leaving');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Device;
 use App\Connection;
 use Carbon\Carbon;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -32,6 +33,13 @@ class PiController extends Controller
         $connection->triggered_at = Carbon::now();
         $connection->created_at = Carbon::now();
         $connection->device_id = $device->id;
+
+        $client = new Client(['base_uri' => '192.168.1.34']);
+
+        $response = $client->request('POST', '/api/users/' . $request->get('mac_address'), [
+            'json' => ['present' => 'true'],
+        ]);
+
         return response()->json($connection->save());
     }
 
@@ -44,6 +52,13 @@ class PiController extends Controller
         $connection->triggered_at = Carbon::now();
         $connection->created_at = Carbon::now();
         $connection->device_id = $device->id;
+
+        $client = new Client(['base_uri' => '192.168.1.34']);
+
+        $response = $client->request('POST', '/api/users/' . $request->get('mac_address'), [
+            'json' => ['present' => 'false'],
+        ]);
+
         return response()->json($connection->save());
     }
 }
