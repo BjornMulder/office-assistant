@@ -1,0 +1,14 @@
+import React from "react";
+import styled from 'styled-components';
+import {color} from "../templates/ui";
+
+const StyledCard = styled.div`
+  background-color: ${color.body.base};
+  padding: 20px;
+`;
+
+const Card = ({children}) => (
+  <StyledCard>{children}</StyledCard>
+);
+
+export default Card;
